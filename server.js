@@ -1,4 +1,6 @@
 const HTTP_PORT = process.env.PORT || 8080;
+
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -14,7 +16,8 @@ const bodyParser = require('body-parser');
 const app = express();
 const ObjectId = mongoose.Types.ObjectId;
 const proposalModel = require("./models/Proposal");
-const adminModel = require("./models/Admin")
+const adminModel = require("./models/Admin");
+
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 // Middleware
@@ -189,6 +192,7 @@ app.post("/delete", async(req, res) => {
         console.log(err);
     }
 });
+
 
 // setup http server to listen on HTTP_PORT
 app.listen(HTTP_PORT);
