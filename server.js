@@ -121,6 +121,7 @@ app.post("/download", async(req, res) => {
         } else if (!file) {
             return res.status(404).send('Error on the database looking for the file.');
         }
+        console.log(res);
         res.set('Content-Type', file.contentType);
         res.set('Content-Disposition', 'attachment; filename="' + file.filename + '"');
 
